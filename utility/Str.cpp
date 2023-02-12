@@ -265,12 +265,9 @@ string Str::capitalize(const string & input)
     int size = input.size();
     for (int i = 0; i < size; i++)
     {
-        if (i == 0)
+        if (i == 0 && input[i] >= 97 && input[i] <= 122)
         {
-            if (input[i] >= 97 && input[i] <= 122)
-            {
-                os << (char)(input[i] - 32);
-            }
+            os << (char)(input[i] - 32);
         }
         else
         {

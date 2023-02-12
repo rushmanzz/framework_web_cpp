@@ -114,6 +114,7 @@ string Server::handle(const Request & req)
         classname = Str::capitalize(arr[0]);
         methodname = arr[1];
     }
+    debug("[reflect]: classname : %s, methodname : %s", classname.c_str(), methodname.c_str());
     ClassFactory * factory = Singleton<ClassFactory>::instance();
     Object * ctrl = factory->create_class(classname);
     if (ctrl == nullptr)
